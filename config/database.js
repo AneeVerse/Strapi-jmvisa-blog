@@ -4,32 +4,15 @@ module.exports = ({ env }) => {
   const client = env('DATABASE_CLIENT', 'postgres');
 
   const connections = {
-    mysql: {
-      connection: {
-        host: env('DATABASE_HOST', 'dpg-ctmi9i3tq21c73f8qta0-a'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'jm_plgb'),
-        user: env('DATABASE_USERNAME', 'saood'),
-        password: env('DATABASE_PASSWORD', 'dJ2a2rAqn7TNcbtjI1G0UfnKzVlpsudZ'),
-        ssl: env.bool('DATABASE_SSL', false) && {
-          key: env('DATABASE_SSL_KEY', undefined),
-          cert: env('DATABASE_SSL_CERT', undefined),
-          ca: env('DATABASE_SSL_CA', undefined),
-          capath: env('DATABASE_SSL_CAPATH', undefined),
-          cipher: env('DATABASE_SSL_CIPHER', undefined),
-          rejectUnauthorized: env.bool('DATABASE_SSL_REJECT_UNAUTHORIZED', true),
-        },
-      },
-      pool: { min: env.int('DATABASE_POOL_MIN', 2), max: env.int('DATABASE_POOL_MAX', 10) },
-    },
+   
     postgres: {
       connection: {
-        connectionString: env('DATABASE_URL'),
-        host: env('DATABASE_HOST', 'localhost'),
-        port: env.int('DATABASE_PORT', 5432),
-        database: env('DATABASE_NAME', 'strapi'),
-        user: env('DATABASE_USERNAME', 'strapi'),
-        password: env('DATABASE_PASSWORD', 'strapi'),
+        connectionString: env('postgres://railway:q!*9H6ij0nePh04AtKN!MLn8fWcVTDJ8@postgres.railway.internal:5432/railway'),
+        host: env('junction.proxy.rlwy.net'),
+        port: env.int('5432'),
+        database: env('railway'),
+        user: env('railway'),
+        password: env('q!*9H6ij0nePh04AtKN!MLn8fWcVTDJ8',
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
