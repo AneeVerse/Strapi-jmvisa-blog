@@ -7,12 +7,12 @@ module.exports = ({ env }) => {
    
     postgres: {
       connection: {
-        connectionString: env('postgres://railway:q!*9H6ij0nePh04AtKN!MLn8fWcVTDJ8@postgres.railway.internal:5432/railway'),
-        host: env('junction.proxy.rlwy.net'),
+        connectionString: env('postgresql://postgres:YSGawAzOuCvtVrEKcLhTNkzfSZyOQjQq@junction.proxy.rlwy.net:21551/railway'),
+        host: env('postgres.railway.internal'),
         port: env.int('5432'),
         database: env('railway'),
-        user: env('railway'),
-        password: env('q!*9H6ij0nePh04AtKN!MLn8fWcVTDJ8',
+        user: env('postgres'),
+        password: env('YSGawAzOuCvtVrEKcLhTNkzfSZyOQjQq',
         ssl: env.bool('DATABASE_SSL', false) && {
           key: env('DATABASE_SSL_KEY', undefined),
           cert: env('DATABASE_SSL_CERT', undefined),
